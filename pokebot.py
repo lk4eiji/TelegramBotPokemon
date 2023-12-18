@@ -1,5 +1,4 @@
 import telebot
-import requests
 import pokebase as pb
 
 #Conexión con nuestro bot
@@ -10,7 +9,7 @@ bot = telebot.TeleBot(TOKEN)
 def get_pokemon(pokemonName):
     if pokemonName:
         pokemon = pb.pokemon(pokemonName)
-        pokeAttack = pokemon.stats.base_stat
+        pokeAttack = pokemon.stats[2].base_stat
         pokeName = pokemon.name
         return f'Nombre: {pokeName}\nAtaque:{pokeAttack}\n'
     else:
@@ -37,7 +36,7 @@ def get_pokemonImg(pokemonId):
 #Comando start
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.reply_to(message, 'Hola! Bienvenido al bot de busqueda de pokemón')
+    bot.reply_to(message, 'Hola! Bienvenido al bot de busqueda de pokemón.\nUsa /Buscar "nombre_del_pokemon" para buscar un pokemón por ejemplo: /buscar charmander')
 #comando help
 @bot.message_handler(commands=['help'])
 def send_help(message):
@@ -53,7 +52,13 @@ def send_pokemon(message):
         bot.send_photo(chat_id=message.chat.id, photo=pokeImg)
         bot.reply_to(message,pokeInfo)
     else:
-        bot.reply_to(message,"Por favor proporciona el nombre del pokemon, por ejemplo: /buscar charmandar")
+        bot.reply_to(message,"Por favor proporciona el nombre del pokemon, por ejemplo: /buscar charmander")
+
+#contestación a mensajes random
+@bot.message_handler(func=lambda m: True)
+def echo_all(message):
+    bienvenida = 'Hola bienvenido a pokebot, para inicar usa /start y si tienes dudas de como usar el bot ingresa /help'
+    bot.reply_to(message,bienvenida)
 
 if __name__ == "__main__":
     bot.polling(none_stop=True)
