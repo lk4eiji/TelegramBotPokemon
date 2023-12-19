@@ -1,8 +1,8 @@
-# MI PRIMER BOT EN TELEGRAM
+# POKEMON BOT TELEGRAM
 
 Este repositorio contiene el código para crear un bot de Telegram utilizando
 la biblioteca Telebot de Python.
-La aplicación prentende ser una bot de telegram que al preguntarle por un pokemon en especifico te de las caracteristicas del mismo usando la pokeApi v2, eso será implementado más adelante, por ahora solo será desarrollada para pruebas
+La aplicación esta desarrollada para crear un bot que al preguntarle por el nombre de algún pokemon te de la imagen del pokemon y sus stats.
 
 ## Configuración
 1. Clona este repositorio.
