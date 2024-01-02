@@ -1,17 +1,16 @@
 # POKEMON BOT TELEGRAM
 
-Este repositorio contiene el código para crear un bot de Telegram utilizando
-la biblioteca Telebot de Python.
-La aplicación esta desarrollada para crear un bot que al preguntarle por el nombre de algún pokemon te de la imagen del pokemon y sus stats.
-
-## Configuración
-1. Clona este repositorio.
-2. Instala en las dependencias `pip install -r requeriments.txt`.
-3. Crea un bot en telegram a traves de BotFather y obten tu token.
-4. Reemplaza 'TU_TOKEN_AQUI' en 'pokebot.py' con tu token.
-5. Ejecuta el bot usando `python pokebot.py`.
+This repository contains the code for creating a Telegram bot using the Python Telebot library. The purpose of this application is to generate a bot that, when queried about the name of any Pokémon, will send you the Pokémon's image along with its statistics.
 
 
-## Funcionalidades
-- Responde a los comandos `/start` y `/help`.
-- Repite cualquier otro mensaje que le envies. 
+## Configuration and Installation
+1. Clone this repository.
+2. Install the dependencies by running `pip install -r requirements.txt`.
+3. Create a bot on Telegram using BotFather and obtain your token.
+4. Replace 'YOUR_TOKEN_HERE' in 'pokebot.py' with your obtained token.
+5. Execute the app with `python pokebot.py`.
+
+
+## Functionalities
+t responds to the following commands: `/start`, `/help`, and `/buscar`.
+The bot provides information when someone tries to send any message that doesn't correspond to the commands.
