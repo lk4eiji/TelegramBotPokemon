@@ -75,8 +75,8 @@ def send_help(message):
 @bot.message_handler(commands=['search'])
 def send_pokemon(message):
     pokeName = message.text.split()[1] if len(message.text.split()) > 1 else None
-    pokeName = pokeName.lower()
     if pokeName:
+        pokeName = pokeName.lower()
         queriedPokemon = Pokemon(pokeName)
         if queriedPokemon.api_data != None:
             pokeInfo = queriedPokemon.get_info()
