@@ -6,10 +6,11 @@ from dotenv import load_dotenv
 class Pokemon:
     def __init__(self,name):
         self.name = name
-        self.api_data = pb.pokemon(name)
         try:
+            self.api_data = pb.pokemon(name)
             self.get_id()
         except AttributeError as e:
+            print(f'Error:{e}')
             self.api_data = None
 
     def get_id(self):
