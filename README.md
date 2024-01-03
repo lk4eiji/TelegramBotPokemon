@@ -14,3 +14,6 @@ This repository contains the code for creating a Telegram bot using the Python T
 ## Functionalities
 - The bot responds to the following commands: `/start`, `/help`, and `/search`.
 - The bot provides information when someone tries to send any message that doesn't correspond to the commands.
+
+## Suggestions 
+Remember, if you're going to upload the app, I recommend using an env var instead of a 'TOKEN' variable to enhance your app's security.
