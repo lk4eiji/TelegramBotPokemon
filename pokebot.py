@@ -1,27 +1,29 @@
 import telebot
 import pokebase as pb
 
-#Connectivity with the bot
-TOKEN = '6889333455:AAGBmOjViTSK4Rx4GY443eb5NWuwesGujTQ' #YOUR_TOKEN_HERE
-bot = telebot.TeleBot(TOKEN)
+class Pokemon:
+    def __init__(self,name):
+        self.name = name
+        self.api_data = pb.pokemon(name)
 
-#Get Pokemon's Information
-def get_pokemon(pokemonName):
-    """_summary_
-
-    Args:
-        pokemonName (_type_): _description_
-
-    Returns:
-        _type_: _description_
-    """
-    if pokemonName:
-        pokemon = pb.pokemon(pokemonName)
-        pokeAttack = pokemon.stats[2].base_stat
-        pokeName = pokemon.name
-        return f'Nombre: {pokeName}\nAtaque:{pokeAttack}\n'
-    else:
-        return 'Pokemon no encontrado'
+    def get_info(self):
+        """
+        Obtene la información del pokemon
+        Returns:
+            str: información del pokemon
+        """
+        attack = self.api_data.stats[1].base_stat
+        deffense = self.api_data.stats[2].base_stat
+        specialAttack = self.api_data.stats[3].base_stat
+        specialDeffense = self.api_data.stats[4].base_stat
+        speed = self.api_data.stats[5].base_stat
+        weight = self.api_data
+            
+        
+        return f'Estadisticas base:\n' \
+               f'Nombre: {self.name}\nAtaque: {attack}\nDefensa:{deffense}' \
+               f'Ataque Especial: {specialAttack}\nDefensa Especial: {specialDeffense}' \
+               f'Velocidad: {speed}\nPeso: {weight}'
     
 #Get pokemon's ID
 def get_pokemonId(pokemonName):
@@ -39,6 +41,10 @@ def get_pokemonImg(pokemonId):
         return pokeImg.url
     else:
         return 'Pokemon no encontrado'
+
+#Connectivity with the bot
+TOKEN = '6889333455:AAGBmOjViTSK4Rx4GY443eb5NWuwesGujTQ' #YOUR_TOKEN_HERE
+bot = telebot.TeleBot(TOKEN)
 
 #Creating chat commands
 #Start Command
