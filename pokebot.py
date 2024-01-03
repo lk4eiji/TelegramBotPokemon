@@ -1,5 +1,7 @@
 import telebot
 import pokebase as pb
+import os
+from dotenv import load_dotenv
 
 class Pokemon:
     def __init__(self,name):
@@ -56,7 +58,8 @@ class Pokemon:
         return img.url
 
 #Connectivity with the bot
-TOKEN = '6889333455:AAGBmOjViTSK4Rx4GY443eb5NWuwesGujTQ' #YOUR_TOKEN_HERE
+load_dotenv()
+TOKEN = os.getenv('TELEGRAM_TOKEN') #YOUR_TOKEN_HERE
 bot = telebot.TeleBot(TOKEN)
 
 #Creating chat commands
