@@ -46,8 +46,8 @@ class Pokemon:
         return f'Nombre del Pokemon: {self.name}\n' \
                f'Número de Pokedex: {self.id}\n' \
                f'\nESTADISTICAS BASE\n' \
-               f'Ataque: {attack}\tDefensa: {defense}\n' \
-               f'Ataque Especial: {specialAttack}\tDefensa Especial: {specialDefense}\n' \
+               f'Ataque: {attack}\nDefensa: {defense}\n' \
+               f'Ataque Especial: {specialAttack}\nDefensa Especial: {specialDefense}\n' \
                f'Velocidad: {speed}\n'
     
     def get_img(self):
