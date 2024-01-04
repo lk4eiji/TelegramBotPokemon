@@ -9,6 +9,7 @@ class Pokemon:
         try:
             self.api_data = pb.pokemon(name)
             self.get_id()
+            self.id = self.get_id()
         except AttributeError as e:
             print(f'Error:{e}')
             self.api_data = None
@@ -32,20 +33,22 @@ class Pokemon:
         It gets the detailed information about a queried pokemon
         Returns:
             str: A formatted string containing information about the Pokémon 
-            including its name, attack, defense, special attack
-            special defense, speed, and weight.
+            including its name, id, attack, defense, special attack
+            special defense, speed.
         """
+        
         attack = self.api_data.stats[1].base_stat
         defense = self.api_data.stats[2].base_stat
         specialAttack = self.api_data.stats[3].base_stat
         specialDefense = self.api_data.stats[4].base_stat
         speed = self.api_data.stats[5].base_stat
-        weight = self.api_data.weight
             
-        return f'Estadisticas base:\n' \
-               f'Nombre: {self.name}\nAtaque: {attack}\nDefensa: {defense}\n' \
+        return f'Nombre del Pokemon: {self.name}\n' \
+               f'Número de Pokedex: {self.id}' \
+               f'Estadisticas base:\n' \
+               f'Ataque: {attack}\nDefensa: {defense}\n' \
                f'Ataque Especial: {specialAttack}\nDefensa Especial: {specialDefense}\n' \
-               f'Velocidad: {speed}\nPeso: {weight}'
+               f'Velocidad: {speed}\n'
     
     def get_img(self):
         """
