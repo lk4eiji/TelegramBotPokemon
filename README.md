@@ -17,3 +17,8 @@ This repository contains the code for creating a Telegram bot using the Python T
 
 ## Suggestions 
 Remember, if you're going to upload the app, I recommend using an env var instead of a 'TOKEN' variable to enhance your app's security.
+
+## Documentation
+- [PokeApi V2](https://pokeapi.co/docs/v2)
+- [PokeBase Python interface to PokeApi](https://github.com/PokeAPI/pokebase)
+- [pyTelegramBotAPI](https://pytba.readthedocs.io/en/latest/)
